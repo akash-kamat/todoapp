@@ -217,7 +217,7 @@ img:hover{
 
 @media only screen and (max-width: 1040px) {
     .main{
-        width: 60%;
+        width: 80%;
     }
     #todo{
         width: 35vw;
