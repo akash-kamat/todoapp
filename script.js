@@ -23,6 +23,8 @@ todoInput.addEventListener("input", function () {
     }
 })
 
+document.querySelector("img").classList.add("rotateimg")
+
 // todoContainer.addEventListener("hover",function(){
 //     if(todoContainer.innerHTML===""){
 //         document.getElementById("clearall").disabled=true;

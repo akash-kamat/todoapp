@@ -1,12 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
-html,body {
+html,
+body {
     background-color: black;
-    background: linear-gradient(to bottom right, rgb(165, 145, 170), #012443);
-    background-repeat:no-repeat;
+    background: linear-gradient(to bottom right, rgb(149, 128, 155), #012443);
+    background-repeat: no-repeat;
     background-attachment: fixed;
 
+}
+
+@font-face {
+    font-family: grobold;
+    src: url(GROBOLD.ttf);
+}
+
+@font-face {
+    font-family: boldfont;
+    src: url(theboldfont.ttf);
 }
 
 * {
@@ -19,30 +30,36 @@ html,body {
 .container1 {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
     align-items: center;
     /* transform: translateX(-30px); */
     /* text-align: center; */
 }
-.container2{
+
+.container2 {
     margin-bottom: 80px;
     /* transform: translateX(-30px); */
 }
 
 #title {
+    font-family: boldfont;
     font-size: 3.5rem;
     text-decoration: none;
-    color: whitesmoke;
+    color: rgb(255, 255, 255);
 }
 
 img {
     width: 4rem;
     margin: 10px;
+    margin-left: 20px;
     transition: all 0.4s ease;
 }
-img:hover{
+
+img:hover {
     cursor: pointer;
-    transform: scale(1.2) rotateZ(90deg);
+    transform: scale(1.1) rotateZ(90deg);
 }
+
 
 .main {
     width: min-content;
@@ -74,8 +91,8 @@ img:hover{
 #todo::placeholder {
     font-style: italic;
     text-align: center;
-    font-size: 75%;
-    color: rgba(255, 255, 255, 0.815);
+    font-size: 85%;
+    color: rgba(255, 255, 255, 0.856);
     letter-spacing: 3px;
 }
 
@@ -85,23 +102,25 @@ img:hover{
     border: none;
     border-radius: 4px;
     color: white;
-    background-image: linear-gradient(to right,rgb(54, 45, 56), #012443);
+    background-image: linear-gradient(to right, rgb(54, 45, 56), #012443);
     font-family: 'Staatliches', cursive;
     letter-spacing: 1px;
     text-align: center;
     transition: all 0.3s ease;
 }
-#addbtn:hover:enabled{
+
+#addbtn:hover:enabled {
     cursor: pointer;
     letter-spacing: 3px;
-    background-image: linear-gradient(to right,rgb(67, 55, 70), #043158);
+    background-image: linear-gradient(to right, rgb(67, 55, 70), #043158);
     transform: scale(1.1);
 }
 
-#addbtn:active:enabled{
+#addbtn:active:enabled {
     transform: scale(0.7);
 }
-#addbtn:disabled{
+
+#addbtn:disabled {
     background-color: rgba(255, 255, 255, 0.582);
 }
 
@@ -123,13 +142,14 @@ img:hover{
     margin-bottom: 20px;
     padding: 7px 0 7px 0;
     border-radius: 5px;
-    filter: drop-shadow(5px 4px 3px rgba(0, 0, 0, 0.623));
+    filter: drop-shadow(5px 4px 2.5px rgba(0, 0, 0, 0.623));
     transition: all 0.3s ease;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     letter-spacing: 1px;
-    overflow:hidden;
+    overflow: hidden;
 }
-.todoblocks:hover{
+
+.todoblocks:hover {
     transform: scale(1.03);
 }
 
@@ -145,12 +165,13 @@ img:hover{
     transition: all 0.3s ease;
 }
 
-.donebtn:hover{
+.donebtn:hover {
     cursor: pointer;
     transform: scale(1.5);
 
 }
-.donebtn:active{
+
+.donebtn:active {
     transform: scale(0.8);
 }
 
@@ -165,17 +186,19 @@ img:hover{
     font-size: 15px;
     transition: all 0.3s ease;
 }
-.removebtn:hover{
+
+.removebtn:hover {
     cursor: pointer;
     transform: scale(1.5);
 
 }
-.removebtn:active{
+
+.removebtn:active {
     transform: scale(0.7);
 
 }
 
-#clearall{
+#clearall {
     text-align: center;
     margin-top: 20px;
     padding: 10px 0 10px 0;
@@ -186,8 +209,10 @@ img:hover{
     font-family: 'Staatliches', cursive;
     font-size: 20px;
     transition: all 0.5s ease;
+    filter: drop-shadow(5px 5px 3px rgba(163, 163, 163, 0.808));
 }
-#clearall:hover{
+
+#clearall:hover {
     padding: 2px 0 2px 0;
     font-size: 30px;
     cursor: pointer;
@@ -200,7 +225,7 @@ img:hover{
     display: inline;
 } */
 
-.hideclear{
+.hideclear {
     display: none;
 }
 
@@ -216,14 +241,48 @@ img:hover{
 
 
 @media only screen and (max-width: 1040px) {
-    .main{
-        width: 60%;
+    .main {
+        width: 80%;
     }
-    #todo{
-        width: 35vw;
+
+    #title {
+        margin-top: 15px;
     }
-    .todoblocks{
+
+    #todo {
+        width: 55vw;
+    }
+
+    .todoblocks {
         font-size: 15px;
-        
+        padding-top: 15px;
+
     }
-  }
+
+    .donebtn {
+        margin-left: 5px;
+    }
+
+    html,
+    body {
+        background: linear-gradient(to bottom right, #afbcc7, #012443);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+    }
+}
+
+@keyframes rotateimg{
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(90deg);
+    }
+}
+
+.rotateimg{
+    animation-duration: 0.8s;
+    animation-name: rotateimg;
+}
